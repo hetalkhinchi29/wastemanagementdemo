@@ -1,6 +1,6 @@
 # app.py (Full-screen Attractive UI)
 import streamlit as st
-import tensorflow as tf
+#import tensorflow as tf
 import numpy as np
 from PIL import Image
 import json
@@ -62,7 +62,7 @@ st.markdown("""
 
 # --- Load model ---
 MODEL_PATH = "waste_mobilenetv2.h5"
-model = tf.keras.models.load_model(MODEL_PATH)
+#model = tf.keras.models.load_model(MODEL_PATH)
 
 # --- Load class names ---
 CLASS_NAMES_FILE = "class_names.json"
@@ -97,7 +97,7 @@ bin_map = {
 # --- Preprocessing ---
 def preprocess_image(img: Image.Image):
     img = img.resize((224, 224))
-    img_array = tf.keras.utils.img_to_array(img)
+    #img_array = tf.keras.utils.img_to_array(img)
     img_array = np.expand_dims(img_array, axis=0) / 255.0
     return img_array
 
